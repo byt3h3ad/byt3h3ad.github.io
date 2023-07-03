@@ -1,81 +1,89 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Adhiraj">
 	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
+		<div class="flex h-screen">
+			<div class="m-auto text-center">
+				<div class="inline-block">
+					<h1 id="name">Adhiraj Dutta</h1>
+					<h2 id="title">student, web dev</h2>
+				</div>
+				<div style={{ height: "1.5rem" }}></div>
+				<p id="social">
+					<a href="https://twitter.com/byt3h3ad" target="_blank">
+						Twitter</a
+					> |{" "}
+					<a
+						href="https://www.linkedin.com/in/byt3h3ad"
+						target="_blank"
+					>
+						LinkedIn
+					</a> |{" "}
+					<a href="https://github.com/byt3h3ad" target="_blank">
+						GitHub</a
+					> |{" "}
+					<a href="https://read.cv/adhiraj" target="_blank"> About</a>
+				</p>
+			</div>
+		</div>
 	</main>
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
+	html,
+	body {
+		@apply text-white;
+		background-color: #000000;
 	}
-	h1 {
-		font-size: 3rem;
+
+	#name,
+	#title {
+		letter-spacing: -0.06em;
+	}
+
+	#name {
+		font-size: 5rem;
 		font-weight: 800;
-		margin: 0;
+		line-height: 1;
+		user-select: none;
 	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
+
+	#title {
+		@apply text-2xl;
+		font-weight: 600;
+		text-align: right;
 	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
+
+	#social {
+		text-align: center;
 	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
+
+	a:hover {
+		color: #0000ff
 	}
-	.instructions strong {
-		color: rgb(var(--accent));
+
+	/* https://github.com/kiding/wanna-see-a-whiter-white */
+
+	/* WebKit */
+	@supports (-webkit-backdrop-filter: blur(0)) {
+		h1,
+		h2,
+		p {
+			filter: brightness(10);
+			-webkit-backdrop-filter: brightness(1);
+		}
 	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
+
+	/* Blink */
+	@supports (backdrop-filter: blur(0)) {
+		h1,
+		h2,
+		p {
+			filter: brightness(10);
+			backdrop-filter: brightness(1);
+		}
 	}
 </style>

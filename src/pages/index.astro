@@ -1,5 +1,25 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Social from "../components/Social.astro";
+
+const handles = [
+	{
+		uri: "https://twitter.com/byt3h3ad",
+		label: "Twitter",
+	},
+	{
+		uri: "https://www.linkedin.com/in/byt3h3ad",
+		label: "LinkedIn",
+	},
+	{
+		uri: "https://github.com/byt3h3ad",
+		label: "GitHub",
+	},
+	{
+		uri: "https://read.cv/adhiraj",
+		label: "About",
+	},
+];
 ---
 
 <Layout title="Adhiraj">
@@ -25,6 +45,17 @@ import Layout from "../layouts/Layout.astro";
 						GitHub</a
 					> |{" "}
 					<a href="https://read.cv/adhiraj" target="_blank"> About</a>
+				</p>
+				<p id="social">
+					{
+						handles.map((data, idx) => (
+								<Social
+									platform={data.uri}
+									username={data.label}
+									key={idx}
+								/>
+						))
+					}
 				</p>
 			</div>
 		</div>

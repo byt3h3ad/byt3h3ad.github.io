@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import data from "/public/books.json";
+const result = data.books;
+---
+
+<Layout title="Books">
+    <section class="grid place-items-center p-12 ">
+        <h1 class="text-4xl">Reads</h1>
+        <p class="text-lg">books i have devoured or am devouring</p>
+    </section>
+    <section
+        class=" grid place-items-center auto-cols-fr border-y border-y-zinc-700"
+    >
+        {
+            result.map((data) => (
+                <Card
+                    title={data.title}
+                    image={data.images}
+                    authorLink={data.thumbnail}
+                    author={data.brand}
+                    link={data.thumbnail}
+                    date={data.stock}
+                    progress="in progress"
+                    description={data.description}
+                />
+            ))
+        }
+        <p class="mb-4">Total: {data.total} books</p>
+    </section>
+</Layout>
+
+<style>
+    body,
+    html {
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        @apply text-white;
+        background-color: #000000;
+    }
+</style>

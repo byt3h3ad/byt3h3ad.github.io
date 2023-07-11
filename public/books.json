@@ -1,0 +1,29 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "The Mystery of the Blue Train",
+      "link": "https://app.thestorygraph.com/books/49469d7d-8ce2-42f0-b0ea-e7b03a3033d2",
+      "description": "I like murder mysteries. A lot.",
+      "rating": 4.69,
+      "date": "July 2023",
+      "author": "Agatha Christie",
+      "progress": "in progress",
+      "authorLink": "https://en.wikipedia.org/wiki/Agatha_Christie",
+      "images": "/images/books/The_Mystery_of_the_Blue_Train.jpeg"
+    },
+    {
+      "id": 2,
+      "title": "The Almanack of Naval Ravikant: A Guide to Wealth and Happiness",
+      "link": "https://app.thestorygraph.com/books/5e56f8de-4a4c-4a97-bcdd-db21664be614",
+      "description": "",
+      "rating": 4.69,
+      "date": "July 2023",
+      "author": "Eric Jorgenson",
+      "progress": "in progress",
+      "authorLink": "https://www.ejorgenson.com/",
+      "images": "/images/books/Almanack_of_Naval.jpeg"
+    }
+  ],
+  "total": 70
+}

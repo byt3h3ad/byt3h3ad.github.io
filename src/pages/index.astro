@@ -1,5 +1,29 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Social from "../components/Social.astro";
+
+const handles = [
+	{
+		uri: "https://twitter.com/byt3h3ad",
+		label: "Twitter",
+	},
+	{
+		uri: "https://www.linkedin.com/in/byt3h3ad",
+		label: "LinkedIn",
+	},
+	{
+		uri: "https://github.com/byt3h3ad",
+		label: "GitHub",
+	},
+	{
+		uri: "https://read.cv/adhiraj",
+		label: "About",
+	},
+	{
+		uri: "/read",
+		label: "Read",
+	},
+];
 ---
 
 <Layout title="Adhiraj">
@@ -12,19 +36,16 @@ import Layout from "../layouts/Layout.astro";
 				</div>
 				<div style={{ height: "1.5rem" }}></div>
 				<p id="social">
-					<a href="https://twitter.com/byt3h3ad" target="_blank">
-						Twitter</a
-					> |{" "}
-					<a
-						href="https://www.linkedin.com/in/byt3h3ad"
-						target="_blank"
-					>
-						LinkedIn
-					</a> |{" "}
-					<a href="https://github.com/byt3h3ad" target="_blank">
-						GitHub</a
-					> |{" "}
-					<a href="https://read.cv/adhiraj" target="_blank"> About</a>
+					|
+					{
+						handles.map((data, idx) => (
+							<Social
+								platform={data.uri}
+								username={data.label}
+								key={idx}
+							/>
+						))
+					}
 				</p>
 			</div>
 		</div>
@@ -44,7 +65,7 @@ import Layout from "../layouts/Layout.astro";
 	}
 
 	#name {
-		font-size: 5rem;
+		font-size: 4rem;
 		font-weight: 800;
 		line-height: 1;
 		user-select: none;

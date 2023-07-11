@@ -21,8 +21,8 @@ const handles = [
 	},
 	{
 		uri: "/read",
-		label: "Read"
-	}
+		label: "Read",
+	},
 ];
 ---
 
@@ -36,28 +36,14 @@ const handles = [
 				</div>
 				<div style={{ height: "1.5rem" }}></div>
 				<p id="social">
-					<a href="https://twitter.com/byt3h3ad" target="_blank">
-						Twitter</a
-					> |{" "}
-					<a
-						href="https://www.linkedin.com/in/byt3h3ad"
-						target="_blank"
-					>
-						LinkedIn
-					</a> |{" "}
-					<a href="https://github.com/byt3h3ad" target="_blank">
-						GitHub</a
-					> |{" "}
-					<a href="https://read.cv/adhiraj" target="_blank"> About</a>
-				</p>
-				<p id="social">
+					|
 					{
 						handles.map((data, idx) => (
-								<Social
-									platform={data.uri}
-									username={data.label}
-									key={idx}
-								/>
+							<Social
+								platform={data.uri}
+								username={data.label}
+								key={idx}
+							/>
 						))
 					}
 				</p>
@@ -79,7 +65,7 @@ const handles = [
 	}
 
 	#name {
-		font-size: 5rem;
+		font-size: 4rem;
 		font-weight: 800;
 		line-height: 1;
 		user-select: none;

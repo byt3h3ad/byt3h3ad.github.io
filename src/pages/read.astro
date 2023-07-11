@@ -3,38 +3,50 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import data from "/public/books.json";
 const result = data.books;
+const time = new Date(1688815425498);
 ---
 
 <Layout title="Books">
-    <section class="grid place-items-center p-12 ">
+    <section class="grid place-items-center p-12 pb-0">
         <h1 class="text-4xl">Reads</h1>
         <p class="text-lg">books i have devoured or am devouring</p>
+        <!-- <p class="mt-12 text-sm">last updated: {time.toLocaleString()}</p> -->
+        <p class="mt-12 mb-8 text-sm">
+            last updated: {time.toDateString()}, {time.toTimeString()}
+        </p>
     </section>
     <section
-        class=" grid place-items-center auto-cols-fr border-y border-y-zinc-700"
+        class="grid place-items-center auto-cols-fr border-y border-y-zinc-700"
     >
         {
             result.map((data) => (
                 <Card
                     title={data.title}
                     image={data.images}
-                    authorLink={data.thumbnail}
-                    author={data.brand}
+                    authorLink={data.authorLink}
+                    author={data.author}
                     link={data.thumbnail}
-                    date={data.stock}
-                    progress="in progress"
+                    date={data.date}
+                    progress={data.progress}
                     description={data.description}
                 />
             ))
         }
-        <p class="mb-4">Total: {data.total} books</p>
+        <p class="mb-6">Total: {data.total} books</p>
+        <p class="mb-8">
+            Older books are at <a
+                href="https://app.thestorygraph.com/profile/bytehead"
+                target="_blank">StoryGraph</a
+            >.
+        </p>
     </section>
 </Layout>
 
 <style>
     body,
     html {
-        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
         @apply text-white;
         background-color: #000000;
     }

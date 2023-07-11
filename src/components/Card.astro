@@ -17,13 +17,13 @@ const { title, image, author, authorLink, link, date, progress, description } =
     <div>
         <p class="text-xs uppercase inline">Link:</p>
         <a href={link} class="underline">
-            Goodreads
+            StoryGraph
             <span class="upArrow">&nbsp;</span>
         </a>
     </div>
     <div>
         <p class="text-xs uppercase inline">Circa:</p>
-        <p class="inline">{date}</p>
+        <p class="inline slashed-zero oldstyle-nums">{date}</p>
     </div>
     <div class="mt-3 mb-7">
         <div
@@ -41,6 +41,7 @@ const { title, image, author, authorLink, link, date, progress, description } =
     }
     a:hover {
         @apply text-blue-600;
+        @apply cursor-pointer;
     }
     .upArrow:after {
         content: "\2197 \FE0E";

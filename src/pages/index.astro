@@ -3,106 +3,109 @@ import Layout from "../layouts/Layout.astro";
 import Social from "../components/Social.astro";
 
 const handles = [
-	{
-		uri: "https://twitter.com/byt3h3ad",
-		label: "Twitter",
-	},
-	{
-		uri: "https://www.linkedin.com/in/byt3h3ad",
-		label: "LinkedIn",
-	},
-	{
-		uri: "https://github.com/byt3h3ad",
-		label: "GitHub",
-	},
-	{
-		uri: "https://read.cv/adhiraj",
-		label: "About",
-	},
-	{
-		uri: "/read",
-		label: "Read",
-	},
+  {
+    uri: "https://twitter.com/byt3h3ad",
+    label: "Twitter",
+  },
+  {
+    uri: "https://www.linkedin.com/in/byt3h3ad",
+    label: "LinkedIn",
+  },
+  {
+    uri: "https://github.com/byt3h3ad",
+    label: "GitHub",
+  },
+  {
+    uri: "https://read.cv/adhiraj",
+    label: "About",
+  },
+  {
+    uri: "/read",
+    label: "Read",
+  },
 ];
 ---
 
 <Layout title="Adhiraj">
-	<main>
-		<div class="flex h-screen">
-			<div class="m-auto text-center p-2">
-				<div class="inline-block">
-					<h1 id="name">Adhiraj Dutta</h1>
-					<h2 id="title">student, dev, shitposter</h2>
-				</div>
-				<div style={{ height: "1.5rem" }}></div>
-				<p id="social">
-					|
-					{
-						handles.map((data, idx) => (
-							<Social
-								platform={data.uri}
-								username={data.label}
-								key={idx}
-							/>
-						))
-					}
-				</p>
-			</div>
-		</div>
-	</main>
+  <main>
+    <div class="flex h-screen">
+      <div class="m-auto text-center p-2">
+        <div class="inline-block">
+          <h1 id="name">Adhiraj Dutta</h1>
+          <h2 id="title">student, dev, shitposter</h2>
+        </div>
+        <div style={{ height: "1.5rem" }}></div>
+        <ul class="text-center flex justify-center">
+          {
+            handles.map((data, idx) => (
+              <li>
+                <Social platform={data.uri} username={data.label} key={idx} />
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </main>
 </Layout>
 
 <style>
-	html,
-	body {
-		@apply text-white;
-		background-color: #000000;
-	}
+  html,
+  body {
+    @apply text-white;
+    background-color: #000000;
+  }
 
-	#name,
-	#title {
-		letter-spacing: -0.06em;
-	}
+  #name,
+  #title {
+    letter-spacing: -0.06em;
+  }
 
-	#name {
-		font-size: 4rem;
-		font-weight: 800;
-		line-height: 1;
-		user-select: none;
-	}
+  #name {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1;
+    user-select: none;
+  }
 
-	#title {
-		@apply text-2xl;
-		font-weight: 600;
-	}
+  #title {
+    @apply text-2xl;
+    font-weight: 600;
+  }
 
-	#social {
-		text-align: center;
-	}
+  a:hover {
+    color: #0000ff;
+  }
 
-	a:hover {
-		color: #0000ff;
-	}
+  li {
+    list-style: none;
+    @apply px-2;
+    border-right: 1px solid whitesmoke;
+  }
 
-	/* https://github.com/kiding/wanna-see-a-whiter-white */
+  li:last-child {
+    border-right: none;
+  }
 
-	/* WebKit */
-	@supports (-webkit-backdrop-filter: blur(0)) {
-		h1,
-		h2,
-		p {
-			filter: brightness(10);
-			-webkit-backdrop-filter: brightness(1);
-		}
-	}
+  /* https://github.com/kiding/wanna-see-a-whiter-white */
 
-	/* Blink */
-	@supports (backdrop-filter: blur(0)) {
-		h1,
-		h2,
-		p {
-			filter: brightness(10);
-			backdrop-filter: brightness(1);
-		}
-	}
+  /* WebKit */
+  @supports (-webkit-backdrop-filter: blur(0)) {
+    h1,
+    h2,
+    p {
+      filter: brightness(10);
+      -webkit-backdrop-filter: brightness(1);
+    }
+  }
+
+  /* Blink */
+  @supports (backdrop-filter: blur(0)) {
+    h1,
+    h2,
+    p {
+      filter: brightness(10);
+      backdrop-filter: brightness(1);
+    }
+  }
 </style>

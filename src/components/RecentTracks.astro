@@ -1,0 +1,22 @@
+---
+const recentTrack = async () => {
+  const response = await fetch(
+    "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=notbytehead&api_key=51fa7ce0a395e582599dfece76dd0542&format=json"
+  );
+  const data = await response.json();
+  const recent = data["recenttracks"].track[0];
+  return recent;
+};
+
+const track = await recentTrack();
+---
+
+<p class="max-w-[40ch]">
+  <strong
+    >Latest track from <a href="https://last.fm/user/notbytehead">Last.FM</a
+    >:</strong
+  >
+  <a href={track.url}
+    >{track.name}, by {track.artist["#text"]}, from {track.album["#text"]}</a
+  >.
+</p>

@@ -10,8 +10,12 @@ export default defineConfig({
   integrations: [tailwind()],
   redirects: {
     '/resume': {
-      status: 307,
+      status: 302,
       destination: 'https://drive.google.com/file/d/1Z6zYLjAf0gTjc0OF38h1PT0Az-ass93y/view'
+    },
+    '/blog': {
+      status: 302,
+      destination: 'https://bytehead.hashnode.dev/'
     }
   }
 });

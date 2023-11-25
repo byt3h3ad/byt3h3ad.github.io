@@ -7,5 +7,11 @@ export default defineConfig({
   // site: 'https://byt3h3ad.github.io',
   site: 'http://adhiraj.me',
   // base: '/website',
-  integrations: [tailwind()]
+  integrations: [tailwind()],
+  redirects: {
+    '/resume': {
+      status: 307,
+      destination: 'https://drive.google.com/file/d/1Z6zYLjAf0gTjc0OF38h1PT0Az-ass93y/view'
+    }
+  }
 });

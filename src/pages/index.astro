@@ -32,14 +32,14 @@ const handles = [
       <div class="m-auto text-center p-2">
         <div class="inline-block">
           <h1 id="name">Adhiraj Dutta</h1>
-          <h2 id="title">student, dev, shitposter</h2>
+          <h2 id="title">nerd, student, dev</h2>
         </div>
-        <div style={{ height: "1.5rem" }}></div>
+        <div class="h-6"></div>
         <ul class="text-center flex justify-center">
           {
-            handles.map((data, idx) => (
+            handles.map(({ uri, label }, idx) => (
               <li>
-                <Social platform={data.uri} username={data.label} key={idx} />
+                <Social platform={uri} username={label} key={idx} />
               </li>
             ))
           }

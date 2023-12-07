@@ -29,11 +29,11 @@ const handles = [
 
 <Layout title="Adhiraj">
   <main>
-    <div class="flex h-screen">
-      <div class="m-auto text-center p-2">
+    <div class="flex h-screen md:flex-row">
+      <div class="m-auto text-center p-2 flex-1">
         <div class="inline-block">
           <h1 id="name">Adhiraj Dutta</h1>
-          <h2 id="title">student, dev, shitposter</h2>
+          <h2 id="title">nerd, student, dev</h2>
         </div>
         <div style={{ height: "1.5rem" }}></div>
         <ul class="text-center flex justify-center">
@@ -46,7 +46,20 @@ const handles = [
           }
         </ul>
       </div>
-      <RecentTracks />
+      <div class="m-auto text-center p-4 flex-1">
+        <p class="text-slate-900">
+          Technologist interested in making and breaking stuff. Insanely
+          curious. Checkout my resume <a
+            href="/resume"
+            target="_blank"
+            rel="noreffer"
+            class="text-zinc-900">here</a
+          >.
+        </p>
+        <span class="">
+          <RecentTracks />
+        </span>
+      </div>
     </div>
   </main>
 </Layout>

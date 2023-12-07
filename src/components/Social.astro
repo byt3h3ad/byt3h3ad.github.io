@@ -2,10 +2,28 @@
 const { platform, username } = Astro.props;
 ---
 
+<script>
+  let links = document.querySelectorAll("a");
+  setTimeout(() => setInterval(hueShiftLinks, 2000), 1000);
+
+  const hueShiftLinks = () => {
+    let randomHue = Math.floor(Math.random() * 360);
+    let randomOffset = 5 + Math.floor(Math.random() * 40);
+    let randomSign = Math.random() > 0.5 ? 1 : -1;
+    for (const [index, link] of links.entries()) {
+      link.style.color = `hsl(${
+        (randomHue + randomOffset * index * randomSign) % 360
+      }, 70%, 69%)`;
+    }
+  };
+</script>
+
 <a href={platform} target="_blank">{username}</a>
 
 <style>
-  a:hover {
-    color: #0000ff;
+  a,
+  a.visited {
+    color: inherit;
+    transition: color 1s ease;
   }
 </style>

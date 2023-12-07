@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 
 const recentTrack = async () => {
   const response = await fetch(
-    "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=notbytehead&api_key=51fa7ce0a395e582599dfece76dd0542&format=json"
+    `http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=notbytehead&api_key=${import.meta.env.API_KEY}&format=json`
   );
   const data = await response.json();
   const recent = data["recenttracks"].track[0];
@@ -23,11 +23,12 @@ const track = await recentTrack();
   />
   <p class="max-w-[40ch] p-2 flex-1">
     <strong
-      >Latest track from <a href="https://last.fm/user/notbytehead" class="text-orange-600">Last.FM</a
+      >Latest track from <a
+        href="https://last.fm/user/notbytehead"
+        class="text-orange-600">Last.FM</a
       >:</strong
     ><br />
-    <a href={track.url}
-      >{track.name}, by {track.artist["#text"]}, from {track.album["#text"]}</a
-    >.
+    <a href={track.url} target="_blank" rel="norefferer" class="text-slate-400"
+      >{track.name}</a>, by {track.artist["#text"]}, from {track.album["#text"]}.
   </p>
 </section>

@@ -28,9 +28,8 @@ const handles = [
 ---
 
 <Layout title="Adhiraj">
-  <main>
-    <div class="flex h-screen md:flex-row">
-      <div class="m-auto text-center p-2 flex-1">
+    <main class="flex h-screen flex-col lg:flex-row">
+      <div class="m-auto text-center px-4 pt-20 lg:pt-0 flex-auto">
         <div class="inline-block">
           <h1 id="name">Adhiraj Dutta</h1>
           <h2 id="title">nerd, student, dev</h2>
@@ -46,22 +45,30 @@ const handles = [
           }
         </ul>
       </div>
-      <div class="m-auto text-center p-4 flex-1">
-        <p class="text-slate-900">
-          Technologist interested in making and breaking stuff. Insanely
-          curious. Checkout my resume <a
+      <div class="lg:m-auto p-6 lg:flex-1">
+        <p class="text-slate-600 sm:text-lg">
+          Curious learner. Checkout my resume <a
             href="/resume"
             target="_blank"
             rel="noreffer"
-            class="text-zinc-900">here</a
-          >.
+            class="text-zinc-400 underline underline-offset-4">here</a
+          >. I <a
+            href="/blog"
+            target="_blank"
+            rel="noreffer"
+            class="text-zinc-400 underline underline-offset-4">blog</a
+          > and write <a
+            href="/til"
+            target="_blank"
+            rel="noreffer"
+            class="text-zinc-400 underline underline-offset-4">tils</a
+          > too! Assassin's Creed is my favourite video game.
         </p>
-        <span class="">
+        <div class="h-6">
+        </div>
           <RecentTracks />
-        </span>
       </div>
-    </div>
-  </main>
+    </main>
 </Layout>
 
 <style>

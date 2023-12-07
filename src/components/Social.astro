@@ -20,7 +20,7 @@ const { platform, username } = Astro.props;
 
 <a href={platform} target="_blank">{username}</a>
 
-<style>
+<style is:global>
   a,
   a.visited {
     color: inherit;

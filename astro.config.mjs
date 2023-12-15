@@ -16,6 +16,10 @@ export default defineConfig({
     '/blog': {
       status: 302,
       destination: 'https://bytehead.hashnode.dev/'
+    },
+    '/links': {
+      status: 302,
+      destination: 'https://bento.me/bytehead'
     }
   }
 });

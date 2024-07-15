@@ -1,0 +1,53 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from "../../layouts/PageLayout.astro";
+import Container from "../../components/Container.astro";
+import { dateRange } from "../../lib/utils";
+import { WORK } from "../../consts";
+import Link from "../../components/Link.astro";
+
+const collection = (await getCollection("work"))
+  .filter((p) => !p.data.draft)
+  .sort(
+    (a, b) =>
+      new Date(b.data.dateStart).valueOf() -
+      new Date(a.data.dateStart).valueOf()
+  );
+
+const work = await Promise.all(
+  collection.map(async (item) => {
+    const { Content } = await item.render();
+    return { ...item, Content };
+  })
+);
+---
+
+<PageLayout title={WORK.TITLE} description={WORK.DESCRIPTION}>
+  <Container>
+    <div class="space-y-10">
+      <div class="animate font-semibold text-black dark:text-white">Work</div>
+      <ul class="flex flex-col space-y-4">
+        {
+          work.map((entry) => (
+            <li class="animate border-b border-black/10 dark:border-white/25 mt-4 py-8 space-y-2 first-of-type:mt-0 first-of-type:pt-0 last-of-type:border-none">
+              <div class="text-sm uppercase mb-4">
+                {dateRange(entry.data.dateStart, entry.data.dateEnd)}
+              </div>
+              <div class="text-black dark:text-white font-semibold">
+                {entry.data.company}
+              </div>
+              <div class="text-sm font-semibold">
+                <Link href={entry.data.uri} external>
+                  {entry.data.role}
+                </Link>
+              </div>
+              <article class="prose dark:prose-invert">
+                <entry.Content />
+              </article>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </Container>
+</PageLayout>

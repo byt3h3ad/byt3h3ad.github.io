@@ -3,7 +3,7 @@ const { platform, username } = Astro.props;
 ---
 
 <script>
-  let links = document.querySelectorAll("a");
+  let links: NodeListOf<HTMLAnchorElement> = document.querySelectorAll("a.social");
   setTimeout(() => setInterval(hueShiftLinks, 2000), 1000);
 
   const hueShiftLinks = () => {
@@ -18,7 +18,7 @@ const { platform, username } = Astro.props;
   };
 </script>
 
-<a href={platform} target="_blank">{username}</a>
+<a href={platform} class="social" target="_blank">{username}</a>
 
 <style>
   a,

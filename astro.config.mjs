@@ -1,25 +1,28 @@
-import { defineConfig } from 'astro/config';
-
+import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
+import mdx from "@astrojs/mdx";
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
   // site: 'https://byt3h3ad.github.io',
-  site: 'http://adhiraj.me',
+  site: "http://adhiraj.me",
   // base: '/website',
-  integrations: [tailwind()],
+  integrations: [tailwind(), mdx(), sitemap()],
   redirects: {
-    '/resume': {
+    "/Resume": {
       status: 302,
-      destination: 'https://drive.google.com/file/d/1Z6zYLjAf0gTjc0OF38h1PT0Az-ass93y/view'
+      destination:
+        "https://drive.google.com/file/d/1Z6zYLjAf0gTjc0OF38h1PT0Az-ass93y/view",
     },
-    '/blog': {
+    "/resume": {
       status: 302,
-      destination: 'https://bytehead.hashnode.dev/'
+      destination:
+        "https://drive.google.com/file/d/1Y0mkUytuV1nXixLeiftlb_1rPFtN4tfw/view?usp=sharing",
     },
-    '/links': {
+    "/links": {
       status: 302,
-      destination: 'https://bento.me/bytehead'
-    }
-  }
+      destination: "https://bento.me/bytehead",
+    },
+  },
 });

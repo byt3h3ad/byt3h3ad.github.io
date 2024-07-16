@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { formatDate } from "../lib/utils";
 
 type Props = {
   entry: CollectionEntry<"blog"> | CollectionEntry<"projects">;
@@ -10,9 +11,10 @@ const { entry } = Astro.props;
 
 <a
   href={`/${entry.collection}/${entry.slug}`}
-  class="relative group flex flex-nowrap py-3 px-4 pr-10 rounded-lg border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"
+  class="relative group flex flex-nowrap gap-3 p-4 pr-10 rounded-lg border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"
 >
-  <div class="flex flex-col flex-1 truncate">
+  <div class="flex flex-col flex-1 gap-2 text-balance">
+    <div class="text-xs uppercase">{formatDate(entry.data.date)}</div>
     <div class="font-semibold">
       {entry.data.title}
     </div>
@@ -21,7 +23,7 @@ const { entry } = Astro.props;
     </div>
     {
       entry.data.tags && (
-        <ul class="flex flex-wrap mt-2 gap-1">
+        <ul class="flex flex-wrap gap-1 mt-2">
           {entry.data.tags.map((tag) => (
             <li class="text-xs uppercase py-0.5 px-1 rounded bg-black/5 dark:bg-white/20 text-black/75 dark:text-white/75">
               {tag}

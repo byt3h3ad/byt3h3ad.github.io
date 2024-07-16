@@ -1,0 +1,38 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from "../../layouts/PageLayout.astro";
+import Container from "../../components/Container.astro";
+import { LOGS } from "../../consts";
+import { formatDate } from "../../lib/utils";
+
+const collection = (await getCollection("logs")).sort(
+  (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
+);
+
+const logs = await Promise.all(
+  collection.map(async (item) => {
+    const { Content } = await item.render();
+    return { ...item, Content };
+  })
+);
+---
+
+<PageLayout title={LOGS.TITLE} description={LOGS.DESCRIPTION}>
+  <Container>
+    <div class="space-y-10 px-4">
+      <div class="animate font-semibold text-black dark:text-white">logs</div>
+      <ul class="flex flex-col space-y-4 list-disc">
+        {
+          logs.map((entry) => (
+            <li class="animate space-y-1 text-balance">
+              <div class="text-sm uppercase">{formatDate(entry.data.date)}</div>
+              <article class="prose dark:prose-invert">
+                <entry.Content />
+              </article>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </Container>
+</PageLayout>

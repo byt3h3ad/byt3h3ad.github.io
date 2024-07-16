@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Social from "../components/Social.astro";
-import { HOME } from "../consts";
+import { SITE, HOME } from "../consts";
 
 const handles = [
   {
@@ -23,7 +23,7 @@ const handles = [
 ];
 ---
 
-<Layout title={HOME.TITLE} description={HOME.DESCRIPTION}>
+<Layout title={SITE.NAME} description={HOME.DESCRIPTION}>
   <main>
     <div class="flex h-screen">
       <div class="m-auto text-center p-2">

@@ -1,40 +1,94 @@
-# Astro Starter Kit: Basics
-
-```
-npm create astro@latest -- --template basics
-```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
+# byt3h3ad's home
 
 ## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
-
 ```
 /
+├── .gitignore
+├── astro.config.mjs
+├── CNAME
+├── package.json
+├── pnpm-lock.yaml
+├── README.md
+├── tailwind.config.cjs
+├── tsconfig.json
+├── .github/
+│   └── workflows/
+│       └── deploy.yml
 ├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── avatar.jpg
+│   ├── favicon.svg
+│   └── projects/
+│       ├── codekon-dark.svg
+│       ├── codekon-help.png
+│       └── codekon-light.svg
+└── src/
+    ├── consts.ts
+    ├── env.d.ts
+    ├── components/
+    │   ├── ArrowCard.astro
+    │   ├── BackToPrev.astro
+    │   ├── BackToTop.astro
+    │   ├── Container.astro
+    │   ├── Footer.astro
+    │   ├── FormattedDate.astro
+    │   ├── Head.astro
+    │   ├── Header.astro
+    │   ├── Link.astro
+    │   └── Social.astro
+    ├── content/
+    │   ├── config.ts
+    │   ├── blog/
+    │   │   ├── bat-cat-alternative/
+    │   │   │   └── index.md
+    │   │   ├── curious-case-of-257/
+    │   │   │   └── index.md
+    │   │   ├── jsx-have-one-parent/
+    │   │   │   └── index.md
+    │   │   └── spa-vs-non-spa/
+    │   │       └── index.md
+    │   ├── logs/
+    │   │   ├── 2024-07-15.md
+    │   │   └── 2024-07-16.md
+    │   ├── projects/
+    │   │   ├── codekon/
+    │   │   │   └── index.md
+    │   │   ├── hn-daily-api/
+    │   │   │   └── index.md
+    │   │   ├── memento-mori/
+    │   │   │   └── index.md
+    │   │   ├── randomhn/
+    │   │   │   └── index.md
+    │   │   ├── stumbleuponhn/
+    │   │   │   └── index.md
+    │   │   └── twt-highlighter/
+    │   │       └── index.md
+    │   └── work/
+    │       ├── agrijod.md
+    │       ├── covid19india.md
+    │       ├── fests.md
+    │       ├── gdsc.md
+    │       ├── hacks.md
+    │       └── quiz.md
+    ├── layouts/
+    │   ├── Layout.astro
+    │   └── PageLayout.astro
+    ├── lib/
+    │   └── utils.ts
+    └── pages/
+        ├── about.astro
+        ├── index.astro
+        ├── blog/
+        │   ├── index.astro
+        │   └── [...slug].astro
+        ├── logs/
+        │   └── index.astro
+        ├── projects/
+        │   ├── index.astro
+        │   └── [...slug].astro
+        └── work/
+            └── index.astro
 ```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
 
 ## 🧞 Commands
 
@@ -48,7 +102,3 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

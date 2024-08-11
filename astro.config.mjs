@@ -20,9 +20,5 @@ export default defineConfig({
       destination:
         "https://drive.google.com/file/d/1Y0mkUytuV1nXixLeiftlb_1rPFtN4tfw/view?usp=sharing",
     },
-    "/links": {
-      status: 302,
-      destination: "https://bento.me/bytehead",
-    },
   },
 });

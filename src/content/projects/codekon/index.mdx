@@ -9,6 +9,8 @@ tags:
   - NodeJS
 ---
 
+import Callout from "../../../components/Callout.astro";
+
 <p align="center">
   <picture>
     <source
@@ -19,26 +21,9 @@ tags:
   </picture>
 </p>
 
-<p align="center">
-  Entirety of GDSC NITS project templates at your fingertips.
-</p>
+Entirety of GDSC NITS project templates at your fingertips.
 
-<p align="center">
-  Get started with the
-  <a
-    rel="noopener noreferrer"
-    target="_blank"
-    href="https://github.com/orgs/gdsc-nits-org/repositories?q=template%3Atrue+archived%3Afalse"
-    >GDSC NITS project templates</a
-  >
-  by running <code>pnpx codekon</code>
-</p>
-
-<div align="center">
-
-[![install size][packagephobia-image]][packagephobia-url] [![NPM version][npm-image]][npm-url]
-
-</div>
+Get started with the [GDSC NITS project templates](https://github.com/orgs/gdsc-nits-org/repositories?q=template%3Atrue+archived%3Afalse) by running `pnpx codekon`.
 
 ## About
 
@@ -53,7 +38,11 @@ tags:
 
 ## Getting Started
 
-> To scaffold a template using `codekon`, make sure you have `git` and `pnpm` installed. We use `pnpm` in our projects and strongly recommend you to do so too. For now, `codekon` only supports `pnpm`.
+<Callout>
+  To scaffold a template using `codekon`, make sure you have `git` and `pnpm`
+  installed. We use `pnpm` in our projects and strongly recommend you to do so
+  too. For now, `codekon` only supports `pnpm`.
+</Callout>
 
 - To use `codekon` interactively:
 
@@ -89,14 +78,9 @@ pnpx codekon my-app react-js-app
 
 - To get the help message run `codekon --help`
 
-<img src="/projects/codekon-help.png" alt="help picture" align="center">
+<img src="/projects/codekon-help.png" alt="help picture" align="center" />
 
 ## Credits -
 
 - [create-t3-app](https://github.com/t3-oss/create-t3-app)
 - [create-vite](https://github.com/vitejs/vite/tree/main/packages/create-vite)
-
-[packagephobia-image]: https://packagephobia.com/badge?p=codekon
-[packagephobia-url]: https://packagephobia.com/result?p=codekon
-[npm-url]: https://www.npmjs.com/package/codekon
-[npm-image]: https://img.shields.io/npm/v/codekon?color=0b7285&logoColor=0b7285

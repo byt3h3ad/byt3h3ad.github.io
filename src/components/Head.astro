@@ -48,6 +48,7 @@ const { title, description, image = "/avatar.jpg" } = Astro.props;
     preloadTheme();
     onScroll();
     animate();
+    addCopyCodeButtons();
 
     const backToTop = document.getElementById("back-to-top");
     backToTop?.addEventListener("click", (event) => scrollToTop(event));
@@ -148,6 +149,43 @@ const { title, description, image = "/avatar.jpg" } = Astro.props;
     }
   }
 
+  function addCopyCodeButtons() {
+    let copyButtonLabel = "📋";
+    let codeBlocks = Array.from(document.querySelectorAll("pre"));
+
+    async function copyCode(codeBlock, copyButton) {
+      const codeText = codeBlock.innerText;
+      const buttonText = copyButton.innerText;
+      const textToCopy = codeText.replace(buttonText, "");
+
+      await navigator.clipboard.writeText(textToCopy);
+      copyButton.innerText = "✅";
+
+      setTimeout(() => {
+        copyButton.innerText = copyButtonLabel;
+      }, 2000);
+    }
+
+    for (let codeBlock of codeBlocks) {
+      const wrapper = document.createElement("div");
+      wrapper.style.position = "relative";
+
+      const copyButton = document.createElement("button");
+      copyButton.innerText = copyButtonLabel;
+      copyButton.classList = "copy-code";
+
+      codeBlock.setAttribute("tabindex", "0");
+      codeBlock.appendChild(copyButton);
+
+      codeBlock.parentNode.insertBefore(wrapper, codeBlock);
+      wrapper.appendChild(codeBlock);
+
+      copyButton?.addEventListener("click", async () => {
+        await copyCode(codeBlock, copyButton);
+      });
+    }
+  }
+
   document.addEventListener("DOMContentLoaded", () => init());
   document.addEventListener("astro:after-swap", () => init());
   preloadTheme();
@@ -227,5 +265,17 @@ const { title, description, image = "/avatar.jpg" } = Astro.props;
 
   html.scrolled #back-to-top {
     @apply opacity-100 pointer-events-auto;
+  }
+
+  .copy-code {
+    @apply absolute right-3 top-1 grid size-8 place-content-center rounded border border-black/15 bg-neutral-100 text-center duration-300 ease-in-out dark:border-white/20 dark:bg-neutral-900;
+  }
+
+  .copy-code:hover {
+    @apply bg-[#E9E9E9] transition-colors dark:bg-[#232323];
+  }
+
+  .copy-code:active {
+    @apply scale-90 transition-transform;
   }
 </style>

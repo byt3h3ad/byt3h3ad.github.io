@@ -11,3 +11,4 @@ dateEnd: "current"
 
 - Refactored and redesigned onboarding flow that resulted in a 30% higher retention rate.
 
+- Migrated landing page from NextJS 14 to [Astro](https://astro.build/), leading to a SEO boost and bump in user activity.

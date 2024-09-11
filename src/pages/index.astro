@@ -35,7 +35,7 @@ const handles = [
         <ul class="text-center flex justify-center">
           {
             handles.map(({ uri, label }, idx) => (
-              <li>
+              <li class="lowercase">
                 <Social platform={uri} username={label} key={idx} />
               </li>
             ))

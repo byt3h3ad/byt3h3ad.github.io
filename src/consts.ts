@@ -1,6 +1,8 @@
 type Site = {
   NAME: string;
   EMAIL: string;
+  URL: string;
+  LINKS: string;
   NUM_POSTS_ON_HOMEPAGE: number;
   NUM_WORKS_ON_HOMEPAGE: number;
   NUM_PROJECTS_ON_HOMEPAGE: number;
@@ -19,6 +21,8 @@ type Socials = {
 export const SITE: Site = {
   NAME: "Adhiraj",
   EMAIL: "bytehead.dev@gmail.com",
+  URL: "https://adhiraj.me",
+  LINKS: "https://home.byt3h3ad.workers.dev",
   NUM_POSTS_ON_HOMEPAGE: 3,
   NUM_WORKS_ON_HOMEPAGE: 2,
   NUM_PROJECTS_ON_HOMEPAGE: 3,
@@ -53,14 +57,14 @@ export const LOGS: Metadata = {
 export const SOCIALS: Socials = [
   {
     NAME: "twitter",
-    HREF: "https://x.com/byt3h3ad",
+    HREF: `${SITE.LINKS}/twitter`,
   },
   {
     NAME: "github",
-    HREF: "https://github.com/byt3h3ad",
+    HREF: `${SITE.LINKS}/github`,
   },
   {
     NAME: "linkedin",
-    HREF: "https://www.linkedin.com/in/byt3h3ad",
+    HREF: `${SITE.LINKS}/linkedin`,
   },
 ];

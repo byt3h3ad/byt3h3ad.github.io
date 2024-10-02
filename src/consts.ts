@@ -21,7 +21,7 @@ type Socials = {
 export const SITE: Site = {
   NAME: "Adhiraj",
   EMAIL: "bytehead.dev@gmail.com",
-  URL: "https://adhiraj.me",
+  URL: "https://adhiraj.tech",
   LINKS: "https://home.byt3h3ad.workers.dev",
   NUM_POSTS_ON_HOMEPAGE: 3,
   NUM_WORKS_ON_HOMEPAGE: 2,

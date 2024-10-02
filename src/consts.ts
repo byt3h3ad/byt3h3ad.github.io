@@ -22,7 +22,7 @@ export const SITE: Site = {
   NAME: "Adhiraj",
   EMAIL: "bytehead.dev@gmail.com",
   URL: "https://adhiraj.tech",
-  LINKS: "https://home.byt3h3ad.workers.dev",
+  LINKS: "https://links.adhiraj.tech",
   NUM_POSTS_ON_HOMEPAGE: 3,
   NUM_WORKS_ON_HOMEPAGE: 2,
   NUM_PROJECTS_ON_HOMEPAGE: 3,

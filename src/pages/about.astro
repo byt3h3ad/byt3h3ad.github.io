@@ -1,11 +1,11 @@
 ---
 import { getCollection } from "astro:content";
-import Container from "../components/Container.astro";
-import PageLayout from "../layouts/PageLayout.astro";
 import ArrowCard from "../components/ArrowCard.astro";
+import Container from "../components/Container.astro";
 import Link from "../components/Link.astro";
+import { HOME, SITE, SOCIALS } from "../consts";
+import PageLayout from "../layouts/PageLayout.astro";
 import { dateRange } from "../lib/utils";
-import { SITE, HOME, SOCIALS } from "../consts";
 
 const blog = (await getCollection("blog"))
   .filter((post) => !post.data.draft)
@@ -62,13 +62,14 @@ const work = await Promise.all(
               aria-label="Today I Learned"
               external>til</Link
             > repo. Go see <Link href="/logs">my logs</Link> too, they're fun (?).
-            (almost) all my social links are <Link href={SITE.LINKS} external
-              >here</Link
+            (almost) all my social links are <Link
+              href=`${SITE.LINKS}/?pretty`
+              external>here</Link
             >.
           </p>
           <p class="animate">
             If you're a recruiter, check out my <Link
-              href="https://drive.google.com/file/d/1Y0mkUytuV1nXixLeiftlb_1rPFtN4tfw/view?usp=sharing"
+              href=`${SITE.LINKS}/resume`
               aria-label="resume"
               external
             >

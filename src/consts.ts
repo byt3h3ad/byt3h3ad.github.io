@@ -2,6 +2,7 @@ type Site = {
   NAME: string;
   EMAIL: string;
   URL: string;
+  PERMALINK: string;
   LINKS: string;
   NUM_POSTS_ON_HOMEPAGE: number;
   NUM_WORKS_ON_HOMEPAGE: number;
@@ -22,6 +23,7 @@ export const SITE: Site = {
   NAME: "Adhiraj",
   EMAIL: "bytehead.dev@gmail.com",
   URL: "https://adhiraj.tech",
+  PERMALINK: "https://byt3h3ad.github.io",
   LINKS: "https://links.adhiraj.tech",
   NUM_POSTS_ON_HOMEPAGE: 3,
   NUM_WORKS_ON_HOMEPAGE: 2,

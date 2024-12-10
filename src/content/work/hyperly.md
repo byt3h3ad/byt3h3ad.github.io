@@ -4,7 +4,7 @@ role: "Frontend Developer Intern"
 college: false
 uri: "https://www.hyperly.ai/"
 dateStart: "2024/08/01"
-dateEnd: "current"
+dateEnd: "2024/10/31"
 ---
 
 - Revamping and building the frontend of the website using NextJS 14 and TailwindCSS.

@@ -2,7 +2,6 @@
 title: "Conversations with Friends"
 description: "emo sad boi hours"
 date: "Nov 26 2024"
-draft: true
 ---
 
 > **Warning:** this is an incoherent train of messy thoughts, not the usual blogs I write. This is raw, unfiltered me, pouring my heart out. Skip it at any point if you feel it's not worth your time. Also, first time.

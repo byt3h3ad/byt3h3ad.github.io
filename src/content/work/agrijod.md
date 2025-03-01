@@ -1,7 +1,6 @@
 ---
 company: "AgriJod"
 role: "Full Stack Developer Intern"
-college: false
 uri: "https://drive.google.com/file/d/1J9JegmivtgDsXWEVuxYwzLK4kya39UvP/view"
 dateStart: "2023/05/25"
 dateEnd: "2023/07/10"

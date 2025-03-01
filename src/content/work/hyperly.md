@@ -1,8 +1,7 @@
 ---
 company: "Hyperly"
 role: "Frontend Developer Intern"
-college: false
-uri: "https://www.hyperly.ai/"
+uri: "https://drive.google.com/file/d/1v7mk26a3mRieBwX2cz-T6omHKQWQVrNy/view?usp=drive_link"
 dateStart: "2024/08/01"
 dateEnd: "2024/10/31"
 ---

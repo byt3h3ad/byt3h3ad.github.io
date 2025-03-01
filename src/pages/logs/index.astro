@@ -24,7 +24,7 @@ const logs = await Promise.all(
       <ul class="flex flex-col space-y-4 list-disc">
         {
           logs.map((entry) => (
-            <li class="animate space-y-1 text-balance">
+            <li class="animate text-balance">
               <div class="text-sm uppercase">{formatDate(entry.data.date)}</div>
               <article class="prose dark:prose-invert">
                 <entry.Content />

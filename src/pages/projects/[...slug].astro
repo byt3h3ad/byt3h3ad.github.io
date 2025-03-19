@@ -57,6 +57,13 @@ const { Content } = await project.render();
           </nav>
         )
       }
+      {
+        project.data.status && (
+          <span class="animate text-base/8 italic">
+            project status: {project.data.status}
+          </span>
+        )
+      }
     </div>
     <article class="animate">
       <Content />

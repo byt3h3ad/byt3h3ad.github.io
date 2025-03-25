@@ -1,11 +1,15 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
-import PageLayout from "../../layouts/PageLayout.astro";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import BackToPrev from "../../components/BackToPrev.astro";
 import Container from "../../components/Container.astro";
 import FormattedDate from "../../components/FormattedDate.astro";
-import { readingTime } from "../../lib/utils";
-import BackToPrev from "../../components/BackToPrev.astro";
 import Link from "../../components/Link.astro";
+import PageLayout from "../../layouts/PageLayout.astro";
+import { readingTime } from "../../lib/utils";
+
+dayjs.extend(utc);
 
 export async function getStaticPaths() {
   const projects = (await getCollection("projects")).sort(
@@ -19,7 +23,11 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"projects">;
 
 const project = Astro.props;
-const { Content } = await project.render();
+const { Content, remarkPluginFrontmatter } = await project.render();
+
+const lastModified = dayjs(remarkPluginFrontmatter.lastModified)
+  .utc()
+  .format("HH:mm:ss DD MMMM YYYY UTC");
 ---
 
 <PageLayout title={project.data.title} description={project.data.description}>
@@ -37,6 +45,7 @@ const { Content } = await project.render();
           {readingTime(project.body)}
         </div>
       </div>
+      <span class="animate text-sm">last modified: {lastModified}</span>
       <div class="animate text-2xl font-semibold text-black dark:text-white">
         {project.data.title}
       </div>

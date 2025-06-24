@@ -2,7 +2,6 @@
 title: "A Nerd's Guide to Making Websites Blazing Fast"
 description: "How to use browser magic to make your site feel like it's on rocket fuel. No, really."
 date: "Jun 22 2025"
-draft: true
 ---
 
 Nothing sucks more than a slow website. You pour your heart and soul into a project, ship it, and then... crickets. The page takes forever to load, and users bounce before they even see your awesome work. We’ve all been there.
@@ -78,8 +77,6 @@ With great power comes great responsibility. While these tools are awesome, you 
 2.  **Use a CDN:** This is a no-brainer. A Content Delivery Network serves your assets from a location physically closer to your user. Combine this with `preconnect` for maximum speed.
 3.  **Optimise Your Images:** No amount of preloading will fix a massive, uncompressed 5MB JPEG. Compress your images\! Use modern formats like AVIF or WebP.
 4.  **Audit Your Site:** Use tools like PageSpeed Insights or WebPageTest to see what your critical request waterfall looks like. This will show you exactly what to `preload` or `preconnect`.
-
-### Conclusion
 
 At the end of the day, these are all just tools in your toolbox. They won't magically fix a fundamentally bloated website, but when used wisely, they can make your site feel incredibly snappy and professional. It’s about giving the browser hints so it can help you deliver a better, faster experience.
 

@@ -2,7 +2,6 @@
 title: "Your Server is Secretly a Git Server. Here's the Magic Spell."
 description: "Unlock the Git powers hiding in any SSH-enabled server. No GitHub, no GitLab, no fuss."
 date: "Jun 23 2025"
-draft: True
 ---
 
 Think you need GitHub or GitLab to host your Git repos? Think again. If you have a server with SSH access, you already have a fully-functional Git server just waiting to be unleashed. It's like discovering your car has a secret turbo button you never knew about.

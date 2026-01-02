@@ -22,9 +22,9 @@ type Socials = {
 export const SITE: Site = {
   NAME: "Adhiraj",
   EMAIL: "bytehead.dev@gmail.com",
-  URL: "https://adhiraj.tech",
+  URL: "https://adhiraj.rocks",
   PERMALINK: "https://byt3h3ad.github.io",
-  LINKS: "https://links.adhiraj.tech",
+  LINKS: "https://links.adhiraj.rocks",
   NUM_POSTS_ON_HOMEPAGE: 3,
   NUM_WORKS_ON_HOMEPAGE: 2,
   NUM_PROJECTS_ON_HOMEPAGE: 3,

@@ -10,6 +10,7 @@ export default defineConfig({
   // site: 'https://byt3h3ad.github.io',
   site: SITE.URL,
   // base: '/website',
+  trailingSlash: "always",
   markdown: {
     remarkPlugins: [remarkModifiedTime],
   },

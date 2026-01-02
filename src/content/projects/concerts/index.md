@@ -2,7 +2,6 @@
 title: "Concerts in Town"
 description: "All the local concerts scraped directly from Spotify internal API"
 date: "Jan 18 2025"
-demoURL: "https://concerts.adhiraj.tech/"
 repoURL: "https://github.com/byt3h3ad/concerts"
 tags:
   - NextJS 15

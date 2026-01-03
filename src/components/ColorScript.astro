@@ -1,0 +1,23 @@
+<script is:inline>
+  function getRandomColor() {
+    const colors = ["#16a34a", "#db2777", "#0284c7", "#ca8a04"];
+    return colors[Math.floor(Math.random() * colors.length)];
+  }
+
+  function setRandomLinkColor() {
+    Array.from(document.getElementsByTagName("a")).forEach((e) => {
+      e.style.textDecorationColor = getRandomColor();
+    });
+  }
+
+  function setColorHoverListener() {
+    Array.from(document.querySelectorAll("a, button")).forEach((e) => {
+      e.addEventListener("mouseover", setRandomLinkColor);
+    });
+  }
+
+  (function () {
+    setRandomLinkColor();
+    setColorHoverListener();
+  })();
+</script>

@@ -10,13 +10,17 @@ const { entry } = Astro.props;
 ---
 
 <a
-  href={`/${entry.collection}/${entry.slug}`}
+  href={`/${entry.collection}/${entry.slug}/`}
   class="relative group flex flex-nowrap gap-3 p-4 pr-10 rounded-lg border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"
 >
   <div class="flex flex-col flex-1 gap-2 text-balance">
     <div class="flex justify-between items-center text-xs uppercase">
       <div class="">{formatDate(entry.data.date)}</div>
-      {entry.data.status && <div class="italic">{entry.data.status}</div>}
+      {
+        entry.collection == "projects" && entry.data.status && (
+          <div class="italic">{entry.data.status}</div>
+        )
+      }
     </div>
     <div class="font-semibold">
       {entry.data.title}

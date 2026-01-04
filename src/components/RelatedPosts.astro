@@ -1,0 +1,29 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { getRelatedPosts } from "../lib/related-posts";
+
+interface Props {
+  entry: CollectionEntry<"blog">;
+}
+
+const { entry } = Astro.props;
+
+const relatedPosts = await getRelatedPosts(entry.slug);
+---
+
+{
+  relatedPosts.length > 0 && (
+    <div>
+      <p class="font-semibold lg:font-medium text-black dark:text-white lg:tracking-tight">
+        Related posts:
+      </p>
+      <ul class="space-y-1.5 text-black dark:text-white pl-3.5 ">
+        {relatedPosts.map((post) => (
+          <li class="leading-tight underline marker:text-black marker:dark:text-white">
+            <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}

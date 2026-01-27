@@ -5,6 +5,7 @@ import Container from "../../components/Container.astro";
 import FormattedDate from "../../components/FormattedDate.astro";
 import PageLayout from "../../layouts/PageLayout.astro";
 import { readingTime } from "../../lib/utils";
+import RelatedPosts from "../../components/RelatedPosts.astro";
 
 export async function getStaticPaths() {
   const posts = (await getCollection("blog")).sort(
@@ -46,5 +47,6 @@ const { Content } = await post.render();
     <article class="animate">
       <Content />
     </article>
+    <RelatedPosts entry={post} />
   </Container>
 </PageLayout>

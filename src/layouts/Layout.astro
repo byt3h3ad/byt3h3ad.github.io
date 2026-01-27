@@ -25,6 +25,7 @@ const { title, description, image = "/avatar.png" } = Astro.props;
       title="Adhiraj's ramblings"
       href={new URL("rss.xml", Astro.site)}
     />
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />

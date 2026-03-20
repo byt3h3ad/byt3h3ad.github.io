@@ -1,5 +1,5 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection, render } from "astro:content";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import BackToPrev from "../../components/BackToPrev.astro";
@@ -13,17 +13,17 @@ dayjs.extend(utc);
 
 export async function getStaticPaths() {
   const projects = (await getCollection("projects")).sort(
-    (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
   );
   return projects.map((project) => ({
-    params: { slug: project.slug },
+    params: { slug: project.id },
     props: project,
   }));
 }
 type Props = CollectionEntry<"projects">;
 
 const project = Astro.props;
-const { Content, remarkPluginFrontmatter } = await project.render();
+const { Content, remarkPluginFrontmatter } = await render(project);
 
 const lastModified = dayjs(remarkPluginFrontmatter.lastModified)
   .utc()

@@ -11,7 +11,7 @@ export async function GET(context: Context) {
     .filter((post) => !post.data.draft)
     .sort(
       (a, b) =>
-        new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
+        new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf(),
     );
   return rss({
     title: `${SITE.NAME}'s Ramblings`,
@@ -21,7 +21,7 @@ export async function GET(context: Context) {
       title: post.data.title,
       description: post.data.description,
       pubDate: post.data.date,
-      link: `/${post.collection}/${post.slug}/`,
+      link: `/${post.collection}/${post.id}/`,
     })),
   });
 }

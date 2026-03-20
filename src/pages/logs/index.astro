@@ -1,19 +1,19 @@
 ---
-import { getCollection } from "astro:content";
-import PageLayout from "../../layouts/PageLayout.astro";
+import { getCollection, render } from "astro:content";
 import Container from "../../components/Container.astro";
 import { LOGS } from "../../consts";
+import PageLayout from "../../layouts/PageLayout.astro";
 import { formatDate } from "../../lib/utils";
 
 const collection = (await getCollection("logs")).sort(
-  (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
+  (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf(),
 );
 
 const logs = await Promise.all(
   collection.map(async (item) => {
-    const { Content } = await item.render();
+    const { Content } = await render(item);
     return { ...item, Content };
-  })
+  }),
 );
 ---
 

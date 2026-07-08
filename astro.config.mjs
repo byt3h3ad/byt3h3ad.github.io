@@ -1,3 +1,4 @@
+import { unified } from "@astrojs/markdown-remark";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
@@ -11,8 +12,11 @@ export default defineConfig({
   site: SITE.URL,
   // base: '/website',
   trailingSlash: "always",
+  compressHTML: true,
   markdown: {
-    remarkPlugins: [remarkModifiedTime],
+    processor: unified({
+      remarkPlugins: [remarkModifiedTime],
+    }),
   },
   integrations: [tailwind(), mdx(), sitemap()],
 });

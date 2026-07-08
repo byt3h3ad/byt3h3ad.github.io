@@ -12,7 +12,7 @@ tags:
 <p align="center">
     <img src="https://upload.wikimedia.org/wikipedia/en/b/bf/Hackernews_logo.png" alt="Hackernews logo.png" height="48" width="257" />
     <h2 align="center">Hacker News Daily API</h2>
-    <h4 align="center">REST API built with TypeScript and Express for <a href="https://www.daemonology.net/hn-daily/" target="_blank">HN Daily</a><h4>
+    <h4 align="center">REST API built with TypeScript and Express for <a href="https://www.daemonology.net/hn-daily/" target="_blank">HN Daily</a></h4>
 </p>
 
 ## About

@@ -1,3 +1,11 @@
+allowBuilds:
+  esbuild: true
+  onnxruntime-node: true
+  protobufjs: true
+  sharp: true
+minimumReleaseAgeExclude:
+  - '@astrojs/telemetry@3.3.3'
+  - astro@7.0.7
 onlyBuiltDependencies:
   - onnxruntime-node
   - protobufjs

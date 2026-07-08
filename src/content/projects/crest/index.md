@@ -2,6 +2,7 @@
 title: "Crest"
 description: "A Hacker News feed showing only stories that crossed a score threshold, newest first."
 date: "Jun 17 2026"
+demoURL: "https://crest.byt3h3ad.workers.dev/"
 repoURL: "https://github.com/byt3h3ad/crest"
 tags:
   - Cloudflare Workers

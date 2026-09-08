@@ -46,10 +46,11 @@ const handles = [
   </main>
 </Layout>
 
-<style is:global>
+<style>
   html,
   body {
-    @apply bg-zinc-100 text-black dark:bg-zinc-950 dark:text-white;
+    @apply text-white;
+    background-color: #000000;
   }
 
   #name,
@@ -72,7 +73,7 @@ const handles = [
   li {
     list-style: none;
     @apply px-2;
-    border-right: 1px solid currentColor;
+    border-right: 1px solid whitesmoke;
   }
 
   li:last-child {
@@ -83,9 +84,9 @@ const handles = [
 
   /* WebKit */
   @supports (-webkit-backdrop-filter: blur(0)) {
-    html.dark h1,
-    html.dark h2,
-    html.dark p {
+    h1,
+    h2,
+    p {
       filter: brightness(10);
       -webkit-backdrop-filter: brightness(1);
     }
@@ -93,9 +94,9 @@ const handles = [
 
   /* Blink */
   @supports (backdrop-filter: blur(0)) {
-    html.dark h1,
-    html.dark h2,
-    html.dark p {
+    h1,
+    h2,
+    p {
       filter: brightness(10);
       backdrop-filter: brightness(1);
     }

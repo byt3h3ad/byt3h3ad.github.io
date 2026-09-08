@@ -1,13 +1,47 @@
 <script is:inline>
   const colorScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
-  function syncColorScheme() {
-    document.documentElement.classList.toggle("dark", colorScheme.matches);
+  function userTheme() {
+    const theme = localStorage.getItem("theme");
+    return theme === "light" || theme === "dark" ? theme : null;
   }
 
-  syncColorScheme();
-  colorScheme.addEventListener("change", syncColorScheme);
-  document.addEventListener("astro:after-swap", syncColorScheme);
+  function syncTheme() {
+    const theme = userTheme() ?? (colorScheme.matches ? "dark" : "light");
+    const dark = theme === "dark";
+    document.documentElement.classList.toggle("dark", dark);
+
+    const toggle = document.getElementById("theme-toggle");
+    if (toggle) {
+      const action = dark ? "light" : "dark";
+      toggle.setAttribute("aria-label", `Switch to ${action} theme`);
+      toggle.setAttribute("title", `Switch to ${action} theme`);
+    }
+  }
+
+  function toggleTheme() {
+    const theme = document.documentElement.classList.contains("dark")
+      ? "light"
+      : "dark";
+
+    if ((theme === "dark") === colorScheme.matches) {
+      localStorage.removeItem("theme");
+    } else {
+      localStorage.setItem("theme", theme);
+    }
+
+    syncTheme();
+  }
+
+  syncTheme();
+  colorScheme.addEventListener("change", syncTheme);
+  document.addEventListener("DOMContentLoaded", syncTheme);
+  document.addEventListener("astro:after-swap", syncTheme);
+  document.addEventListener("click", (event) => {
+    if (event.target.closest("#theme-toggle")) {
+      toggleTheme();
+    }
+  });
 </script>
 
 <style is:global>

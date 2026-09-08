@@ -1,0 +1,21 @@
+<script is:inline>
+  const colorScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+  function syncColorScheme() {
+    document.documentElement.classList.toggle("dark", colorScheme.matches);
+  }
+
+  syncColorScheme();
+  colorScheme.addEventListener("change", syncColorScheme);
+  document.addEventListener("astro:after-swap", syncColorScheme);
+</script>
+
+<style is:global>
+  html {
+    color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+</style>

@@ -11,13 +11,14 @@
   }
 
   function setColorHoverListener() {
-    Array.from(document.querySelectorAll("a, button")).forEach((e) => {
-      e.addEventListener("mouseover", setRandomLinkColor);
+    document.addEventListener("mouseover", (event) => {
+      if (event.target instanceof Element && event.target.closest("a, button")) {
+        setRandomLinkColor();
+      }
     });
   }
 
-  (function () {
-    setRandomLinkColor();
-    setColorHoverListener();
-  })();
+  setRandomLinkColor();
+  setColorHoverListener();
+  document.addEventListener("astro:after-swap", setRandomLinkColor);
 </script>

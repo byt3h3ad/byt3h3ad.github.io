@@ -1,7 +1,5 @@
 ---
 import { type CollectionEntry, getCollection, render } from "astro:content";
-import dayjs from "dayjs";
-import utc from "dayjs/plugin/utc";
 import BackToPrev from "../../components/BackToPrev.astro";
 import Container from "../../components/Container.astro";
 import FormattedDate from "../../components/FormattedDate.astro";
@@ -9,7 +7,6 @@ import Link from "../../components/Link.astro";
 import PageLayout from "../../layouts/PageLayout.astro";
 import { readingTime } from "../../lib/utils";
 
-dayjs.extend(utc);
 
 export async function getStaticPaths() {
   const projects = (await getCollection("projects")).sort(
@@ -25,9 +22,11 @@ type Props = CollectionEntry<"projects">;
 const project = Astro.props;
 const { Content, remarkPluginFrontmatter } = await render(project);
 
-const lastModified = dayjs(remarkPluginFrontmatter.lastModified)
-  .utc()
-  .format("HH:mm:ss DD MMMM YYYY UTC");
+const date = new Date(remarkPluginFrontmatter.lastModified);
+const lastModified = `${date.toISOString().slice(11, 19)} ${new Intl.DateTimeFormat(
+  "en-GB",
+  { day: "2-digit", month: "long", year: "numeric", timeZone: "UTC" },
+).format(date)} UTC`;
 ---
 
 <PageLayout title={project.data.title} description={project.data.description}>
